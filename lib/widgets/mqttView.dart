@@ -60,7 +60,7 @@ class _MQTTViewState extends State<MQTTView> {
 
   Widget _buildAppBar(BuildContext context) {
     return AppBar(
-      title: const Text('MQTT'),
+      title: const Text('MQTT-Q'),
       backgroundColor: Colors.greenAccent,
     );
   }

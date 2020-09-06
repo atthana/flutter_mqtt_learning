@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mqtt_app/widgets/mqttView.dart';
 import 'package:flutter_mqtt_app/mqtt/state/MQTTAppState.dart';
 import 'package:provider/provider.dart';
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+} 
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget {
      */
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
