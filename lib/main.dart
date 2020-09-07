@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mqtt_app/pages/login.dart';
 import 'package:flutter_mqtt_app/widgets/mqttView.dart';
 import 'package:flutter_mqtt_app/mqtt/state/MQTTAppState.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'DOGELBOW',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider<MQTTAppState>(
         create: (_) => MQTTAppState(),
-        child: MQTTView(),
+        // child: MQTTView(),
+        child: LoginPage(),
       )
     );
   }

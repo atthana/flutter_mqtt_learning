@@ -68,8 +68,7 @@ class _MQTTViewState extends State<MQTTView> {
   Widget _buildColumn() {
     return Column(
       children: <Widget>[
-        _buildConnectionStateText(
-            _prepareStateMessageFrom(currentAppState.getAppConnectionState)),
+        _buildConnectionStateText(_prepareStateMessageFrom(currentAppState.getAppConnectionState)),
         _buildEditableColumn(),
         _buildScrollableTextWith(currentAppState.getHistoryText)
       ],
