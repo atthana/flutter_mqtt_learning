@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_mqtt_app/animation/fade_animation.dart';
 
 class LoginPage extends StatelessWidget {
@@ -120,10 +121,15 @@ class LoginPage extends StatelessWidget {
                                             bottom: BorderSide(
                                                 color: Colors.grey[100]))),
                                     child: TextFormField(
+                                      validator: (value) {
+                                        if (value.isEmpty) {
+                                          return 'Please fill your username.';
+                                        }
+                                      },
                                       controller: usernameController,
                                       decoration: InputDecoration(
                                           border: InputBorder.none,
-                                          hintText: "Username",
+                                          hintText: 'Username',
                                           hintStyle: TextStyle(
                                               color: Colors.grey[400])),
                                     ),
@@ -131,11 +137,16 @@ class LoginPage extends StatelessWidget {
                                   Container(
                                     padding: EdgeInsets.all(8.0),
                                     child: TextFormField(
+                                      validator: (value) {
+                                        if (value.isEmpty) {
+                                          return 'Please fill your password.';
+                                        }
+                                      },
                                       obscureText: true,
                                       controller: passwordController,
                                       decoration: InputDecoration(
                                           border: InputBorder.none,
-                                          hintText: "Password",
+                                          hintText: 'Password',
                                           hintStyle: TextStyle(
                                               color: Colors.grey[400])),
                                     ),
@@ -170,7 +181,8 @@ class LoginPage extends StatelessWidget {
                                     if (pass) {
                                       username = usernameController.text.trim();
                                       password = passwordController.text.trim();
-                                      print('Username = $username, Password = $password');
+                                      print(
+                                          'Username = $username, Password = $password');
                                     }
                                   }),
                             )),
